@@ -30,7 +30,10 @@ define ("EMAIL_PRIORITY_NORMAL", 'Normal');
 define ("EMAIL_PRIORITY_LOW", 'Low');
 define ("EMAIL_PRIORITY_LOWEST", 'Lowest');
 
-class Email {
+// renamed _Email to avoid conflicts
+// * updated references in this file only
+//   no other references were found
+class _Email {
   public function setBccSender($bccSender) {
     $this->bccSender = $bccSender;
   }
@@ -60,7 +63,7 @@ class Email {
   }
 }
 
-class SingleEmailMessage extends Email {
+class SingleEmailMessage extends _Email {
   public function __construct() {}
 
 
@@ -114,7 +117,7 @@ class SingleEmailMessage extends Email {
   }
 }
 
-class MassEmailMessage extends Email {
+class MassEmailMessage extends _Email {
   public function setTemplateId($templateId) {
     $this->templateId = $templateId;
   }
